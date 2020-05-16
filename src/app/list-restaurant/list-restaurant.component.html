@@ -1,0 +1,18 @@
+<table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Restaurants</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let resto of collection">
+          <td>{{resto.id}}</td>
+          <td>{{resto.name}}</td>
+          <td>{{resto.restaurant}}</td>
+          <td>{{resto.email}}</td>
+      </tr>
+    </tbody>
+  </table>
