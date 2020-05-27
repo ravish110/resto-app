@@ -8,6 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./add-restaurant.component.sass']
 })
 export class AddRestaurantComponent implements OnInit {
+  alert:boolean = false;
   addRestaurent= new FormGroup({
     name: new FormControl(' '),
     email: new FormControl(' '),
@@ -20,8 +21,13 @@ export class AddRestaurantComponent implements OnInit {
   creatResto() {
     // console.log(this.addRestaurent.value);
     this.resto.addResto(this.addRestaurent.value).subscribe((result)=>{
+      this.alert = true;
+      this.addRestaurent.reset({});
       console.log('get data from service', result)
     })
+  }
+  closeAlert(){
+    this.alert =false;
   }
 
 }
