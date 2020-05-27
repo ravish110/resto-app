@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {component: AddRestaurantComponent, path: 'add'},
-  {component: UpdateRestaurantComponent, path: 'update'},
+  {component: UpdateRestaurantComponent, path: 'update/:id'},
   {component: ListRestaurantComponent, path: 'list'},
   {component: LoginComponent, path: 'login'},
   {component: RegisterComponent, path: 'register'},
