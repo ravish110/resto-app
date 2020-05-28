@@ -6,7 +6,7 @@ import { UpdateRestaurantComponent } from './update-restaurant/update-restaurant
   providedIn: 'root'
 })
 export class CommonService {
-  URL= 'https://my-json-server.typicode.com/ravish110/json/db'
+  URL= 'https://my-json-server.typicode.com/ravish110/json/resto'
   constructor(private _http: HttpClient) { }
   getRestoList(){
     return this._http.get(this.URL);
