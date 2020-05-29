@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../common.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
+  alert:boolean = false;
+  email:string;
+  password:string;
 
-  constructor() { }
+  constructor(private resto:CommonService, private router:Router) { }
 
   ngOnInit(): void {
+  }
+  logIn(){
+    
   }
 
 }

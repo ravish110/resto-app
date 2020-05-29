@@ -9,20 +9,20 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AddRestaurantComponent implements OnInit {
   alert:boolean = false;
-  addRestaurent= new FormGroup({
+  addRestaurant= new FormGroup({
     name: new FormControl(' '),
     email: new FormControl(' '),
-    restaurent: new FormControl(' ')
+    restaurant: new FormControl(' ')
   })
   constructor(private resto:CommonService) { }
 
   ngOnInit(): void {
   }
   creatResto() {
-    // console.log(this.addRestaurent.value);
-    this.resto.addResto(this.addRestaurent.value).subscribe((result)=>{
+    // console.log(this.addRestaurant.value);
+    this.resto.addResto(this.addRestaurant.value).subscribe((result)=>{
       this.alert = true;
-      this.addRestaurent.reset({});
+      this.addRestaurant.reset({});
       console.log('get data from service', result)
     })
   }

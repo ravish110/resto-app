@@ -16,5 +16,8 @@ public collection:any;
       console.log(this.collection)
     });
   }
+  deleteResto(id){
+    return 
+  }
 
 }

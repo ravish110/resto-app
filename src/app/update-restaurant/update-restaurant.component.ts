@@ -9,25 +9,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UpdateRestaurantComponent implements OnInit {
   alert:boolean = false;
-  editRestaurent= new FormGroup({
+  editRestaurant= new FormGroup({
     name: new FormControl(' '),
     email: new FormControl(' '),
-    restaurent: new FormControl(' ')
+    restaurant: new FormControl(' ')
   })
   constructor(private resto:CommonService, private router:ActivatedRoute) { }
 
   ngOnInit(): void {
     console.log(this.router.snapshot.params.id)
     this.resto.getCurrentData(this.router.snapshot.params.id).subscribe((result)=>{
-      this.editRestaurent= new FormGroup({
+      this.editRestaurant= new FormGroup({
         name: new FormControl(result['name']),
         email: new FormControl(result['email']),
-        restaurent: new FormControl(result['restaurent'])
+        restaurant: new FormControl(result['restaurant'])
       })
     })
   }
   updateResto(){
-    this.resto.updateResto(this.router.snapshot.params.id, this.editRestaurent.value).subscribe((result)=>{
+    this.resto.updateResto(this.router.snapshot.params.id, this.editRestaurant.value).subscribe((result)=>{
       console.log(result, "data updated successfull")
       this.alert=true;
     })
